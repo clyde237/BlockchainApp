@@ -86,7 +86,7 @@ class Ui_MainWindow(object):
         self.valider_btn.setText(_translate("MainWindow", "Valider"))
 
     # in this part we add code for make blockchain with this app
-    def on_valid(sefl):
+    def on_valid(self):
         class BlackCoin:
             def __init__(self, previous_block_hash, transaction_list):
                 self.previous_block_hash = previous_block_hash
@@ -118,9 +118,9 @@ class Ui_MainWindow(object):
 
         MyBlockchain = Blockchain()
 
-        num_p = Ui_MainWindow().payeur
-        num_b = Ui_MainWindow().benef
-        mnt_trans = Ui_MainWindow().montant
+        num_p = self.payeur
+        num_b = self.benef
+        mnt_trans = self.montant
 
         MyBlockchain.create_block_fraom_transaction([[num_p, mnt_trans, num_b]])
         MyBlockchain.display_chain()
